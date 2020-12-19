@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: omnifleet-ui
+spec:
+  selector:
+    matchLabels:
+      app: omnifleet-ui
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: omnifleet-ui
+    spec:
+      containers:
+        - name: omnifleet-ui
+          image: scbunn/omnifleet-ui:v1.0.0
+          imagePullPolicy: Always
+          env:
+            - name: API_GATEWAY_URL
+              value: "http://localhost"
+            - name: GOOGLE_MAPS_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: omnifleet-ui
+                  key: googleMapsApiKey
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: omnifleet-ui
+spec:
+  selector:
+    app: omnifleet-ui
+  ports:
+    - name: http
+      port: 8080
+  type: ClusterIP  # needs to be run on a k8s cluster that supports LB

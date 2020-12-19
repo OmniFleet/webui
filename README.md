@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# OmniFleet Web UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[OmniFleet](https://github.com/OmniFleet) is a fictional fleet management service designed around a microservices architecture for the purposes of demonstrating various deployment, troubleshooting, and performance analysis situations.  For more information please look at the project [documentation](https://github.com/OmniFleet/docs)
 
-## Available Scripts
+This component is the react based UI.
+# Configuration
 
-In the project directory, you can run:
+This component uses the Goole Maps API.  Because google now requires billing to be enabled for this API, you will need to supply your own API key at runtime using the `GOOGLE_MAPS_API_KEY` environment variable.  **Please remember that this is a client side javascript application.  As such the key you provide will be available to anybody that views the source.**
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Container Execution
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+docker run --rm -it -p 8080:80 -e GOOGLE_MAPS_API_KEY=super_secret scbunn/omnifleet-ui:tag
+```
 
-### `npm test`
+# Faults and Issues
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This application is designed as a demonstration tool.  As such a number of know faults, issues, performance bugs, etc have been introduced to showcase various tools and troubleshooting techniques.  These known issues are documented here.
 
-### `npm run build`
+| Version  | Description                 | Notes |
+| -------- | --------------------------- | ----- |
+| v1.0.0.0 | MVP release.  No auth, etc. | None  |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Attributions
+Icons made by [Freepik](https://www.flaticon.com/authors/freepik) from [Flaticon](https://www.flaticon.com/)
+unless otherwise indicated.

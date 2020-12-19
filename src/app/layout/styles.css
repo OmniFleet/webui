@@ -1,0 +1,17 @@
+.ui.main.container {
+  margin-top: 7em;
+  padding-left: 1em;
+  padding-right: 2em;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  background: #c3c3c3;
+  width: 100vw;
+  height: 5em;
+}
+
+body {
+  overflow: hidden;
+}
